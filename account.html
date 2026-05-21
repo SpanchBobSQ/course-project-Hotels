@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StayFind — Личный кабинет</title>
+  <!-- Подключаем скомпилированный CSS -->
+  <link rel="stylesheet" href="assets/css/index.css?v=20260521-mobile-menu">
+  <!-- Иконки Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Навигация -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">StayFind.</a>
+    <div class="nav-links"><a href="index.html">Главная</a><a href="index.html#journal">Журнал</a><a href="search.html">Коллекция</a><a href="javascript:handleLogout()">Выйти</a></div>
+    <button type="button" class="nav-toggle" aria-label="Открыть меню" aria-expanded="false"><span></span></button>
+  </nav>
+
+  <!-- Заголовок: имя пользователя подставляется через JS -->
+  <header class="page-header page-header-left">
+    <div class="container"><h1 class="story-title">Добро пожаловать, <span id="accountName" class="handwritten">Гость</span>.</h1></div>
+  </header>
+
+  <main class="container account-main">
+    <div class="account-grid">
+      <!-- ============================================================ -->
+      <!-- БОКОВОЕ МЕНЮ: навигация по разделам личного кабинета          -->
+      <!-- ============================================================ -->
+      <aside class="account-sidebar">
+        <nav class="account-nav">
+          <a href="#" onclick="switchAccountTab(event, 'profile')" class="active">Профиль</a>
+          <a href="#" onclick="switchAccountTab(event, 'bookings')">История поездок</a>
+          <a href="#" onclick="switchAccountTab(event, 'favorites')">Избранное</a>
+          <a href="#" onclick="switchAccountTab(event, 'settings')">Настройки</a>
+        </nav>
+      </aside>
+
+      <!-- ============================================================ -->
+      <!-- КОНТЕНТ: секции переключаются через JS (видна только active)  -->
+      <!-- ============================================================ -->
+      <div class="account-content">
+        <!-- Секция: Профиль -->
+        <section id="section-profile" class="account-section active">
+          <h2 class="account-heading">Мой профиль</h2>
+          <div class="form-grid">
+            <div class="form-group"><label>Имя</label><input type="text" id="profileName" placeholder="Ваше имя"></div>
+            <div class="form-group"><label>Email</label><input type="email" id="profileEmail" placeholder="Email" disabled></div>
+            <div class="form-group"><label>Телефон</label><input type="tel" id="profilePhone" placeholder="+375 (XX) XXX-XX-XX"></div>
+            <div class="form-group"><label>Город</label><input type="text" id="profileCity" placeholder="Ваш город"></div>
+          </div>
+          <button class="btn-primary" onclick="saveProfile()">Сохранить</button>
+        </section>
+
+        <!-- Секция: История бронирований (заполняется через JS) -->
+        <section id="section-bookings" class="account-section"><h2 class="account-heading">История поездок</h2><div id="bookingsList"></div></section>
+
+        <!-- Секция: Избранные отели (заполняется через JS) -->
+        <section id="section-favorites" class="account-section"><h2 class="account-heading">Избранное</h2><div id="favoritesList" class="favorites-grid"></div></section>
+
+        <!-- Секция: Настройки (смена пароля, удаление аккаунта) -->
+        <section id="section-settings" class="account-section">
+          <h2 class="account-heading">Настройки</h2>
+          <div class="form-grid"><div class="form-group"><label>Новый пароль</label><input type="password" id="newPassword"></div><div class="form-group"><label>Повторите пароль</label><input type="password" id="confirmNewPassword"></div></div>
+          <button class="btn-primary" onclick="changePassword()">Изменить пароль</button>
+          <button class="danger-link danger-link-block" onclick="deleteAccount()">Удалить аккаунт</button>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Подвал -->
+  <footer class="footer">
+    <div class="footer-brand"><a href="index.html" class="logo footer-logo">StayFind.</a></div>
+    <nav class="footer-nav">
+      <a href="#">Privacy Policy</a>
+      <a href="#">How It Works</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Contact Us</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://t.me/SpanchBobSQ" target="_blank" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
+      <a href="mailto:demosukmatvej988@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="tel:+375292521802" title="Телефон"><i class="fa-solid fa-phone"></i></a>
+    </div>
+    <div class="footer-contact">
+      <span>Matvei Demosiuk</span>
+      <span>|</span>
+      <a href="tel:+375292521802">+375 29 252 18 02</a>
+      <span>|</span>
+      <a href="mailto:demosukmatvej988@gmail.com">demosukmatvej988@gmail.com</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 StayFind Inc. All rights reserved.</p>
+  </footer>
+
+  <!-- Toast-уведомление -->
+  <div id="toast" class="toast"></div>
+
+  <!-- JavaScript -->
+  <script src="app.js?v=20260521-mobile-menu" defer></script>
+</body>
+</html>

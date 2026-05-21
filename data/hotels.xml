@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stayfind>
+  <hotels>
+    <hotel id="1">
+      <name>Four Seasons Resort</name>
+      <city>Mahé</city>
+      <stars>5</stars>
+      <rating>9.7</rating>
+      <price currency="RUB">42000</price>
+      <image>https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&amp;q=80</image>
+      <address>Petite Anse, Mahé</address>
+      <description>Бесконечный бассейн с видом на океан и вилла на склоне горы.</description>
+      <amenities><amenity>wifi</amenity><amenity>pool</amenity><amenity>spa</amenity><amenity>breakfast</amenity></amenities>
+    </hotel>
+    <hotel id="2">
+      <name>Constance Lemuria</name>
+      <city>Praslin</city>
+      <stars>5</stars>
+      <rating>9.6</rating>
+      <price currency="RUB">55000</price>
+      <image>https://images.unsplash.com/photo-1540541338287-41700207dee6?w=600&amp;q=80</image>
+      <address>Anse Kerlan, Praslin</address>
+      <description>Резорт у пляжа Anse Georgette — один из лучших в мире.</description>
+      <amenities><amenity>wifi</amenity><amenity>pool</amenity><amenity>spa</amenity><amenity>parking</amenity><amenity>breakfast</amenity></amenities>
+    </hotel>
+    <hotel id="3">
+      <name>North Island Lodge</name>
+      <city>North Island</city>
+      <stars>5</stars>
+      <rating>9.8</rating>
+      <price currency="RUB">120000</price>
+      <image>https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=600&amp;q=80</image>
+      <address>North Island</address>
+      <description>Частный остров только для 11 вилл. Абсолютное уединение.</description>
+      <amenities><amenity>wifi</amenity><amenity>pool</amenity><amenity>spa</amenity><amenity>breakfast</amenity></amenities>
+    </hotel>
+    <hotel id="4">
+      <name>Fregate Island Private</name>
+      <city>Fregate</city>
+      <stars>5</stars>
+      <rating>9.5</rating>
+      <price currency="RUB">95000</price>
+      <image>https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&amp;q=80</image>
+      <address>Fregate Island</address>
+      <description>Частный остров с виллами и нетронутой природой.</description>
+      <amenities><amenity>wifi</amenity><amenity>pool</amenity><amenity>spa</amenity><amenity>parking</amenity></amenities>
+    </hotel>
+    <hotel id="5">
+      <name>Maia Luxury Resort &amp; Spa</name>
+      <city>Mahé</city>
+      <stars>5</stars>
+      <rating>9.4</rating>
+      <price currency="RUB">38000</price>
+      <image>https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&amp;q=80</image>
+      <address>Anse Louis, Mahé</address>
+      <description>Виллы с бассейном на юго-западе Махэ.</description>
+      <amenities><amenity>wifi</amenity><amenity>pool</amenity><amenity>spa</amenity><amenity>breakfast</amenity></amenities>
+    </hotel>
+    <hotel id="6">
+      <name>Anantara Maia Seychelles</name>
+      <city>Mahé</city>
+      <stars>5</stars>
+      <rating>9.3</rating>
+      <price currency="RUB">28000</price>
+      <image>https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&amp;q=80</image>
+      <address>Anse Boileau, Mahé</address>
+      <description>Уединённый бутик-резорт на берегу тихой бухты.</description>
+      <amenities><amenity>wifi</amenity><amenity>pool</amenity><amenity>parking</amenity></amenities>
+    </hotel>
+    <hotel id="7">
+      <name>Raffles Seychelles</name>
+      <city>Praslin</city>
+      <stars>5</stars>
+      <rating>9.5</rating>
+      <price currency="RUB">48000</price>
+      <image>https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=600&amp;q=80</image>
+      <address>Anse Takamaka, Praslin</address>
+      <description>Роскошные виллы с прямым выходом на пляж.</description>
+      <amenities><amenity>wifi</amenity><amenity>pool</amenity><amenity>spa</amenity><amenity>breakfast</amenity></amenities>
+    </hotel>
+    <hotel id="8">
+      <name>Bird Island Lodge</name>
+      <city>Bird Island</city>
+      <stars>4</stars>
+      <rating>9.0</rating>
+      <price currency="RUB">18000</price>
+      <image>https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=600&amp;q=80</image>
+      <address>Bird Island</address>
+      <description>Экологический резорт на острове птиц. Черепахи и кораллы.</description>
+      <amenities><amenity>wifi</amenity><amenity>breakfast</amenity></amenities>
+    </hotel>
+    <hotel id="9">
+      <name>Le Domaine de L'Orangeraie</name>
+      <city>La Digue</city>
+      <stars>5</stars>
+      <rating>9.2</rating>
+      <price currency="RUB">32000</price>
+      <image>https://images.unsplash.com/photo-1548032885-b5e38734688a?w=600&amp;q=80</image>
+      <address>Anse Severe, La Digue</address>
+      <description>Виллы среди пальм в 5 минутах от Anse Source d'Argent.</description>
+      <amenities><amenity>wifi</amenity><amenity>pool</amenity><amenity>spa</amenity></amenities>
+    </hotel>
+    <hotel id="10">
+      <name>Kempinski Seychelles</name>
+      <city>Mahé</city>
+      <stars>5</stars>
+      <rating>9.1</rating>
+      <price currency="RUB">22000</price>
+      <image>https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&amp;q=80</image>
+      <address>Baie Lazare, Mahé</address>
+      <description>Пляж Baie Lazare — спокойные воды и коралловые рифы.</description>
+      <amenities><amenity>wifi</amenity><amenity>pool</amenity><amenity>parking</amenity><amenity>breakfast</amenity></amenities>
+    </hotel>
+    <hotel id="11">
+      <name>Hilton Seychelles Labriz</name>
+      <city>Silhouette</city>
+      <stars>5</stars>
+      <rating>9.3</rating>
+      <price currency="RUB">35000</price>
+      <image>https://images.unsplash.com/photo-1586500036706-41963de24d8b?w=600&amp;q=80</image>
+      <address>Silhouette Island</address>
+      <description>Остров Силуэт — нетронутые леса и белейшие пляжи.</description>
+      <amenities><amenity>wifi</amenity><amenity>pool</amenity><amenity>spa</amenity><amenity>breakfast</amenity></amenities>
+    </hotel>
+    <hotel id="12">
+      <name>Banyan Tree Seychelles</name>
+      <city>Mahé</city>
+      <stars>5</stars>
+      <rating>9.4</rating>
+      <price currency="RUB">40000</price>
+      <image>https://images.unsplash.com/photo-1619546952812-520e98064a52?w=600&amp;q=80</image>
+      <address>Anse Intendance, Mahé</address>
+      <description>Бесконечный вид на горизонт Индийского океана.</description>
+      <amenities><amenity>wifi</amenity><amenity>pool</amenity><amenity>spa</amenity><amenity>parking</amenity></amenities>
+    </hotel>
+    <hotel id="13">
+      <name>Coral Strand Hotel</name>
+      <city>Mahé</city>
+      <stars>3</stars>
+      <rating>8.2</rating>
+      <price currency="RUB">12000</price>
+      <image>https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&amp;q=80</image>
+      <address>Beau Vallon, Mahé</address>
+      <description>Уютный отель на пляже Бо-Валлон с видом на закат.</description>
+      <amenities><amenity>wifi</amenity><amenity>pool</amenity><amenity>breakfast</amenity></amenities>
+    </hotel>
+    <hotel id="14">
+      <name>Berjaya Praslin Resort</name>
+      <city>Praslin</city>
+      <stars>3</stars>
+      <rating>7.9</rating>
+      <price currency="RUB">9500</price>
+      <image>https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=600&amp;q=80</image>
+      <address>Anse Volbert, Praslin</address>
+      <description>Бюджетный вариант на побережье Кот-д'Ор.</description>
+      <amenities><amenity>wifi</amenity><amenity>pool</amenity></amenities>
+    </hotel>
+    <hotel id="15">
+      <name>La Digue Island Lodge</name>
+      <city>La Digue</city>
+      <stars>3</stars>
+      <rating>8.0</rating>
+      <price currency="RUB">11000</price>
+      <image>https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&amp;q=80</image>
+      <address>Anse Reunion, La Digue</address>
+      <description>Тропический лодж среди пальм в сердце Ла-Диг.</description>
+      <amenities><amenity>wifi</amenity><amenity>breakfast</amenity></amenities>
+    </hotel>
+  </hotels>
+</stayfind>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StayFind — Путешествия со смыслом</title>
+  <!-- Подключаем скомпилированный CSS (из SCSS) -->
+  <link rel="stylesheet" href="assets/css/index.css?v=20260521-mobile-menu">
+  <!-- Иконки Font Awesome (стрелки, глазик пароля и т.д.) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- ============================================================ -->
+  <!-- SPLASH-ЭКРАН: полноэкранная форма входа/регистрации.          -->
+  <!-- Показывается при первом визите. После входа — скрывается.     -->
+  <!-- ============================================================ -->
+  <div id="splashScreen">
+    <!-- Фоновая картинка splash-экрана -->
+    <div class="splash-bg">
+      <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1920&q=90" alt="Anse Source d'Argent, La Digue, Seychelles">
+      <div class="splash-bg-overlay"></div>
+    </div>
+
+    <!-- Верхняя панель: логотип + навигация -->
+    <div class="splash-topbar">
+      <div class="splash-logo">
+        <!-- SVG-иконка глобуса -->
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="7.5" stroke="rgba(126,207,223,0.65)" stroke-width="1.2"/>
+          <line x1="9" y1="1.5" x2="9" y2="16.5" stroke="rgba(126,207,223,0.65)" stroke-width="1"/>
+          <line x1="1.5" y1="9" x2="16.5" y2="9" stroke="rgba(126,207,223,0.65)" stroke-width="1"/>
+          <polygon points="9,2.2 10.5,7.5 9,8 7.5,7.5" fill="rgba(126,207,223,0.95)"/>
+        </svg>
+        StayFind.
+      </div>
+      <div class="splash-nav-right">
+        <span class="splash-nav-link">О нас</span>
+        <!-- Иконка флага (выбор языка) -->
+        <div class="splash-lang">
+          <svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="4.6" fill="#fff"/><rect y="4.6" width="20" height="4.8" fill="#003DA5"/><rect y="9.4" width="20" height="4.6" fill="#CC0000"/></svg>
+          <svg width="9" height="6" viewBox="0 0 9 6" fill="none" aria-hidden="true"><path d="M1 1.5L4.5 5L8 1.5" stroke="rgba(178,232,240,0.6)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Основная панель: форма слева + картинка справа -->
+    <div class="splash-panel">
+      <div class="splash-left">
+        <!-- Табы переключения между Входом и Регистрацией -->
+        <div class="splash-tabs">
+          <button class="splash-tab active" id="stab-login" type="button" onclick="sfTab('login')">Вход</button>
+          <button class="splash-tab" id="stab-reg" type="button" onclick="sfTab('reg')">Регистрация</button>
+        </div>
+
+        <!-- Форма ВХОДА -->
+        <div id="sf-login">
+          <div class="splash-headline">Мы скучали!</div>
+          <div class="splash-subline">Войдите, чтобы открыть острова Сейшел и лучшие отели мира.</div>
+          <span class="splash-label">Email</span>
+          <input class="splash-input" type="email" id="sfEmail" placeholder="your@email.com" autocomplete="email">
+          <span class="splash-label">Пароль</span>
+          <div class="splash-input-wrap">
+            <input class="splash-input" type="password" id="sfPwd" placeholder="••••••••••" autocomplete="current-password">
+            <!-- Кнопка показа/скрытия пароля -->
+            <span class="splash-eye" onclick="sfTogglePwd()"><i class="fa-regular fa-eye" id="sfEye"></i></span>
+          </div>
+          <!-- Блок для ошибок валидации (скрыт по умолчанию) -->
+          <div id="sfLoginErr" class="splash-error"></div>
+          <div class="splash-row">
+            <label class="splash-remember"><input type="checkbox"> Запомнить меня</label>
+            <span class="splash-forgot" onclick="sfForgotPassword()">Забыли пароль?</span>
+          </div>
+          <button class="splash-btn" type="button" onclick="sfLogin()">Войти</button>
+          <div class="splash-social-row">
+            <span class="splash-social-text">или войдите через</span>
+            <div class="splash-social-icons"><span class="splash-social-icon" onclick="sfSocialLogin('facebook')">f</span><span class="splash-social-icon" onclick="sfSocialLogin('google')">G</span></div>
+          </div>
+        </div>
+
+        <!-- Форма РЕГИСТРАЦИИ (скрыта по умолчанию) -->
+        <div id="sf-reg">
+          <div class="splash-headline">Добро пожаловать!</div>
+          <div class="splash-subline">Создайте аккаунт и откройте мир тропических путешествий.</div>
+          <span class="splash-label">Имя</span>
+          <input class="splash-input" type="text" id="sfRegName" placeholder="Ваше имя" autocomplete="name">
+          <span class="splash-label">Email</span>
+          <input class="splash-input" type="email" id="sfRegEmail" placeholder="your@email.com" autocomplete="email">
+          <span class="splash-label">Пароль</span>
+          <input class="splash-input" type="password" id="sfRegPwd" placeholder="Не менее 6 символов" autocomplete="new-password">
+          <span class="splash-label">Повторите пароль</span>
+          <input class="splash-input" type="password" id="sfRegConfirm" placeholder="Повторите пароль" autocomplete="new-password">
+          <div id="sfRegErr" class="splash-error"></div>
+          <button class="splash-btn" type="button" onclick="sfRegister()">Создать аккаунт</button>
+        </div>
+      </div>
+      <!-- Декоративная картинка справа (скрывается на мобильных) -->
+      <div class="splash-right">
+        <img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=700&q=85" alt="Anse Lazio, Praslin, Seychelles">
+        <div class="splash-right-overlay"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- НАВИГАЦИЯ: фиксированная шапка сайта                         -->
+  <!-- ============================================================ -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">StayFind.</a>
+    <div class="nav-links">
+      <a href="#destinations">Направления</a>
+      <a href="#journal">Журнал</a>
+      <a href="search.html">Коллекция</a>
+      <!-- Ссылка меняется через JS: «Войти» → имя пользователя -->
+      <a href="account.html" id="authLink">Войти</a>
+    </div>
+    <button type="button" class="nav-toggle" aria-label="Открыть меню" aria-expanded="false"><span></span></button>
+  </nav>
+
+  <!-- ============================================================ -->
+  <!-- HERO-СЕКЦИЯ: главный баннер с заголовком и кнопкой            -->
+  <!-- ============================================================ -->
+  <header class="hero">
+    <div class="hero-bg"><img src="https://images.unsplash.com/photo-1619546952812-520e98064a52?w=1920&q=85" alt="Seychelles tropical beach sunset"></div>
+    <span class="hero-subtitle">Curated Seychelles & Island Experiences</span>
+    <h1 class="hero-title">Искусство <span class="handwritten">медленных</span><br>путешествий</h1>
+    <a href="#destinations" class="btn-explore">Выбрать направление</a>
+    <div class="scroll-indicator">Листайте вниз</div>
+  </header>
+
+  <!-- ============================================================ -->
+  <!-- НАПРАВЛЕНИЯ: сетка карточек с лучшими пляжами                -->
+  <!-- ============================================================ -->
+  <section class="destinations-section" id="destinations">
+    <div class="section-header">
+      <span class="section-kicker">Explore · Seychelles</span>
+      <h2 class="section-title">Лучшие <span class="handwritten">пляжи</span></h2>
+    </div>
+    <!-- Карточки направлений — ссылки на search.html с фильтром по городу -->
+    <div class="destinations-grid">
+      <a href="search.html?city=La+Digue" class="dest-card"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1000&q=85" loading="lazy" alt="Anse Source d'Argent"><div class="dest-info"><span class="dest-name">Anse Source d'Argent</span><span class="dest-count">La Digue · Самый фотографируемый пляж мира</span></div></a>
+      <a href="search.html?city=Praslin" class="dest-card"><img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=800&q=85" loading="lazy" alt="Anse Lazio"><div class="dest-info"><span class="dest-name">Anse Lazio</span><span class="dest-count">Praslin · Бирюзовая лагуна</span></div></a>
+      <a href="search.html?city=Mahé" class="dest-card"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&q=85" loading="lazy" alt="Beau Vallon"><div class="dest-info"><span class="dest-name">Beau Vallon</span><span class="dest-count">Mahé · Закаты и морские развлечения</span></div></a>
+      <a href="search.html?city=Grand+Anse" class="dest-card"><img src="https://images.unsplash.com/photo-1586500036706-41963de24d8b?w=700&q=85" loading="lazy" alt="Grand Anse"><div class="dest-info"><span class="dest-name">Grand Anse</span><span class="dest-count">La Digue · Дикий берег Индийского океана</span></div></a>
+      <a href="search.html?city=Anse+Georgette" class="dest-card"><img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=700&q=85" loading="lazy" alt="Anse Georgette"><div class="dest-info"><span class="dest-name">Anse Georgette</span><span class="dest-count">Praslin · Скрытый рай</span></div></a>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ЖУРНАЛ: статьи о пляжах с картинками                         -->
+  <!-- ============================================================ -->
+  <section class="journal-section" id="journal">
+    <!-- Скрытый заголовок секции для W3C-валидности -->
+    <h2 class="sr-only">Журнал путешествий</h2>
+    <!-- Статья 1 — текст слева, картинка справа -->
+    <article class="journal-article">
+      <div class="article-content"><span class="article-meta">История 01 · La Digue</span><h3 class="article-title">Гранитные <span class="handwritten">скалы</span> Anse Source d'Argent</h3><p class="article-excerpt">Самый фотографируемый пляж планеты: розовый гранит, пальмы и вода цвета аквамарина. La Digue можно объехать на велосипеде за один день — и влюбиться навсегда.</p><a href="search.html?city=La+Digue" class="article-link">Исследовать</a></div>
+      <div class="article-img"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900&q=85" loading="lazy" alt="La Digue"></div>
+    </article>
+    <!-- Статья 2 — зеркальная раскладка (класс .alt) -->
+    <article class="journal-article alt">
+      <div class="article-content"><span class="article-meta">История 02 · Praslin</span><h3 class="article-title">Пляжи, где <span class="handwritten">время</span> течёт медленнее</h3><p class="article-excerpt">Anse Lazio и Anse Georgette — маршруты для тех, кто выбирает тишину, прозрачную воду и отели с персональным сервисом.</p><a href="search.html?city=Praslin" class="article-link">Смотреть отели</a></div>
+      <div class="article-img"><img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=900&q=85" loading="lazy" alt="Praslin"></div>
+    </article>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- STICKY-ПОИСК: фиксированная панель внизу экрана.              -->
+  <!-- Появляется при прокрутке ниже hero-секции (через JS).         -->
+  <!-- ============================================================ -->
+  <div class="search-overlay-trigger" id="stickySearch">
+    <form class="mini-search" onsubmit="handleSearch(event)">
+      <span>Найти отель:</span>
+      <input type="text" id="stickyCity" placeholder="Остров или пляж..." list="cityList">
+      <input type="date" id="stickyCheckin">
+      <input type="date" id="stickyCheckout">
+      <button class="btn-mini-search" type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+    </form>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- ПОДВАЛ САЙТА                                                  -->
+  <!-- ============================================================ -->
+  <footer class="footer">
+    <div class="footer-brand"><a href="index.html" class="logo footer-logo">StayFind.</a></div>
+    <nav class="footer-nav">
+      <a href="#">Privacy Policy</a>
+      <a href="#">How It Works</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Contact Us</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://t.me/SpanchBobSQ" target="_blank" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
+      <a href="mailto:demosukmatvej988@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="tel:+375292521802" title="Телефон"><i class="fa-solid fa-phone"></i></a>
+    </div>
+    <div class="footer-contact">
+      <span>Matvei Demosiuk</span>
+      <span>|</span>
+      <a href="tel:+375292521802">+375 29 252 18 02</a>
+      <span>|</span>
+      <a href="mailto:demosukmatvej988@gmail.com">demosukmatvej988@gmail.com</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 StayFind Inc. All rights reserved.</p>
+  </footer>
+
+  <!-- Toast-уведомление (скрыто, показывается через JS) -->
+  <div id="toast" class="toast"></div>
+
+  <!-- Список городов для автодополнения в поле ввода -->
+  <datalist id="cityList"><option value="La Digue"><option value="Praslin"><option value="Mahé"><option value="Grand Anse"><option value="Anse Georgette"><option value="Silhouette"><option value="Bird Island"></datalist>
+
+  <!-- Подключаем JavaScript (defer — загрузка после HTML) -->
+  <script src="app.js?v=20260521-mobile-menu" defer></script>
+</body>
+</html>
