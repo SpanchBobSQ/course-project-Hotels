@@ -4,7 +4,7 @@
 
 ## Структура
 
-- `index.html` — главная страница.
+- `index.html` — главная страница сайта.
 - `search.html` — коллекция отелей и фильтры.
 - `account.html` — личный кабинет.
 - `assets/scss/index.scss` — основной Sass-файл.
